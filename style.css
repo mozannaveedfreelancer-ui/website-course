@@ -1,0 +1,238 @@
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #f4f8fb;
+    font-family: Arial, sans-serif;
+    margin:0;
+}
+  header{
+    background-color: darkblue;
+    color: white;
+    padding: 8px;
+    position: sticky;
+top: 0;
+z-index: 1000;
+}
+h1{
+    color:white;
+    text-align: center;
+    padding-top:20px ;
+    text-transform: uppercase;
+    font-size:40px;
+    line-height:1.2;
+}
+h2{
+    color :darkred;
+}
+button{
+    background-color:green;
+    color:white;
+    padding: 10px 20px;
+    border:none;
+    font: size 18px;
+    transition:0.3s;
+font-weight:bold;
+}
+button:hover{
+    background-color:darkgreen;
+    transform:scale(1.05);
+}
+.container{
+    width:80%;
+    margin:auto;
+    
+}
+
+nav {
+    text-align:center;
+    margin-top: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav a{
+    text-decoration: none;
+    color:white;
+    background-color: darkred;
+    padding: 10px 20px;
+    margin:5px;
+    border-radius :5px;
+}
+
+
+nav a:hover{
+    background-color: green;
+    color: white;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+label{
+    font-weight: bold;
+}
+select{
+    width: 320px;
+    padding:10px;
+    font-size: 16px;
+}
+.doctor-card{
+    width:300px;
+    background-color:white;
+    border:2px solid darkblue;
+    padding:20px;
+    margin-top:15px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+    transition:0.3s;
+    cursor:pointer;
+}
+.doctors{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.doctor-card img{
+    width:100%;
+    border-radius: 10px;
+}
+.doctors{
+    margin-top: 40px;
+}
+
+
+
+
+.about{
+    background:#ffffff;
+    padding:40px;
+    margin-top:40px;
+    border-radius:10px;
+}
+
+.about h2{
+    color:darkred;
+    margin-bottom:15px;
+}
+
+.about p{
+    font-size:20px;
+    line-height:1.7;
+}
+footer{
+    background: darkblue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p{
+    margin: 8px;
+}
+.btn{
+    background:green;
+    color:white;
+    padding:10px 20px;
+    border-radius:5px;
+    text-decoration:none;
+    display:inline-block;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:darkgreen;
+    transform:scale(1.08);
+}
+.doctor-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px gray;
+}
+#reviews{
+    margin-top:40px;
+}
+
+.review-card{
+    background:white;
+    padding:20px;
+    margin:15px 0;
+    border-radius:10px;
+    box-shadow:0 0 10px lightgray;
+
+     transition:0.3s;
+    cursor:pointer;
+}
+
+ .review-card:hover{
+    transform:scale(1.03);
+    box-shadow:0 10px 20px lightgray;
+}
+
+
+
+#location{
+    margin-top:40px;
+}
+
+#location h2{
+    color:darkblue;
+    margin-bottom:20px;
+}
+
+#location iframe{
+    border-radius:10px;
+}
+@media screen and (max-width:768px){
+
+header{
+    padding:15px;
+}
+
+header h1{
+    font-size:28px;
+}
+
+nav{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+}
+
+nav a{
+    width:90%;
+    text-align:center;
+    padding:12px;
+}
+
+.container{
+    width:95%;
+}
+
+
+
+
+
+input,
+select,
+textarea,
+button{
+    width:100%;
+    box-sizing:border-box;
+    margin-top:10px;
+}
+
+iframe{
+    width:100%;
+    height:250px;
+}
+
+footer{
+    padding:25px;
+}
+
+}
