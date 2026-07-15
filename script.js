@@ -11,11 +11,17 @@ form.addEventListener("submit", function(event){
     let date = document.getElementById("date").value;
 let department = document.getElementById("department").value;
 
-    if(name === "" || email === "" || phone === ""){
-        alert("Please fill all fields.");
-    }
+   if(name.length < 3){
+    alert("Name must be at least 3 characters.");
+    return;
+}
+
+if(phone.length !== 11){
+    alert("Phone number must be exactly 11 digits.");
+    return;
+}
     else{
-         submitBtn.innerHTML = "Sending...";
+        submitBtn.innerHTML = '<span class="spinner"></span>Sending...';
     submitBtn.disabled = true;
 
       emailjs.send("service_d1z53t1", "template_zxcu7me", {
@@ -30,14 +36,14 @@ let department = document.getElementById("department").value;
            setTimeout(function () {
     document.getElementById("success-message").style.display = "none";
 }, 3000);
-submitBtn.innerHTML = "Book Appointment";
+submitBtn.innerHTML = '<span id="btn-text">Book Appointment</span>';
 submitBtn.disabled = false;
 form.reset();
            
         })
         .catch(function (error) {
             alert("Email Failed!");
-            submitBtn.innerHTML = "Book Appointment";
+          submitBtn.innerHTML = '<span id="btn-text">Book Appointment</span>';
 submitBtn.disabled = false;
             console.log(error);
         });

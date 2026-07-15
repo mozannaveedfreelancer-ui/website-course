@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Doctor consultation website</title>
+   <title>Doctor Consultation | Book Appointment Online</title>
+   <meta name="description" content="Book appointments with experienced doctors online. Fast, easy and trusted healthcare services.">
+
+<meta name="keywords" content="Doctor, Appointment, Hospital, Healthcare, Clinic, Online Doctor">
     <link rel="stylesheet" href="style.css">
 </head>
  
@@ -43,25 +46,27 @@
 <form id="appointment">
 
     <label>Full Name</label><br>
-    <input type="text" id="name" placeholder="Enter your full name"><br><br>
+    <input type="text" id="name" placeholder="Enter your full name"  minlength="3" required><br><br>
 
 
     <label>Email</label><br>
-     <input type="email"id="email" placeholder="Enter your Email"><br><br>
+     <input type="email" id="email" placeholder="Enter your Email"><br><br>
 
      <label>Phone number</label><br>
-      <input type="tel"id="phone" placeholder="Enter your phone number"><br><br>
+     <input type="tel" id="phone" placeholder="Enter your phone number" pattern="[0-9]{11}" maxlength="11" required><br><br>
 
 <label>Select date</label><br>
-<input type="date" id="date"><br><br>
+<input type="date" id="date" required><br><br>
 <label>Select Department</label><br>
-<select id="department">
+<select id="department" required>
     <option>General physician</option>
     <option>Cardiologist</option>
     <option>Dentist</option>
     <option>Eye specialist</option>
 </select><br><br>
-<button type="submit" id="submit-btn">Book Appointment</button>
+<button type="submit" id="submit-btn">
+    <span id="btn-text">Book Appointment</span>
+</button>
 
 
 </form>
@@ -143,6 +148,11 @@ loading="lazy">
 <p>© 2026 Doctor Consultation Website | All Rights Reserved</p>
 <p>Email: mozannaveedfreelance@gmail.com</p>
 <p>📱 WhatsApp: +92 3294303269</p>
+<p>📍 Liaquatpur, Punjab, Pakistan</p>
+
+<p>Follow Us: Facebook | Instagram | YouTube</p>
+
+<p>Available: Monday - Saturday | 9:00 AM - 8:00 PM</p>
 
 </footer>
 
