@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+            padding:30px;
+        }
+
+        h1{
+            text-align:center;
+            color:#0077cc;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+            margin-top:20px;
+        }
+
+        th,td{
+            border:1px solid #ddd;
+            padding:12px;
+            text-align:center;
+        }
+
+        th{
+            background:#0077cc;
+            color:white;
+        }
+
+        tr:nth-child(even){
+            background:#f9f9f9;
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>Doctor Consultation Admin Panel</h1>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Date</th>
+<th>Department</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody id="tableBody">
+
+</tbody>
+
+</table>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+<script src="admin.js"></script>
+
+</body>
+</html>

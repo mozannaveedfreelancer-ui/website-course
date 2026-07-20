@@ -1,4 +1,20 @@
-const form = document.getElementById("appointment");
+// Firebase Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCZthUxtNWuz1AW6rb-cilpIgLdG6YbJcU",
+  authDomain: "doctor-consultation-webs-b7d79.firebaseapp.com",
+  projectId: "doctor-consultation-webs-b7d79",
+  storageBucket: "doctor-consultation-webs-b7d79.firebasestorage.app",
+  messagingSenderId: "110273665291",
+  appId: "1:110273665291:web:fa58f0eee9332b6723aa0e"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Firestore Database
+const db = firebase.firestore();
+const form 
+= document.getElementById("appointment");
 const submitBtn = document.getElementById("submit-btn");
 
 form.addEventListener("submit", function(event){
@@ -23,6 +39,21 @@ if(phone.length !== 11){
     else{
         submitBtn.innerHTML = '<span class="spinner"></span>Sending...';
     submitBtn.disabled = true;
+    db.collection("appointments").add({
+    name: name,
+    email: email,
+    phone: phone,
+    date: date,
+    department: department,
+    status: "Pending",
+    createdAt: new Date()
+})
+.then(function () {
+    console.log("Appointment saved in Firebase");
+})
+.catch(function (error) {
+    console.log("Firebase Error:", error);
+});
 
       emailjs.send("service_d1z53t1", "template_zxcu7me", {
     name: name,

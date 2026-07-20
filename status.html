@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Appointment Status</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    width:350px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,.15);
+}
+
+h2{
+    text-align:center;
+    color:#0077cc;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#0077cc;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#005fa3;
+}
+
+#result{
+    margin-top:20px;
+    text-align:center;
+    font-weight:bold;
+    color:green;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Check Appointment Status</h2>
+
+<input type="email" id="email" placeholder="Enter Email">
+
+<input type="text" id="phone" placeholder="Enter Phone Number">
+
+<button id="checkBtn">Check Status</button>
+
+<div id="result"></div>
+
+</div>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+<script src="status.js"></script>
+
+</body>
+</html>
