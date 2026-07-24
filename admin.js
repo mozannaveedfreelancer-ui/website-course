@@ -65,20 +65,30 @@ function deleteAppointment(id) {
 }
 function approveAppointment(id) {
 
-    db.collection("appointments").doc(id).update({
+    db.collection("appointments").doc(id).get().then((doc) => {
 
-        status: "Approved"
+        const data = doc.data();
+
+        emailjs.send("service_d1z53t1", "template_qdgeuzz", {
+            name: data.name,
+            email: data.email,
+            date: data.date,
+            department: data.department,
+            status: "Approved"
+        });
+
+        return db.collection("appointments").doc(id).update({
+            status: "Approved"
+        });
 
     }).then(() => {
 
         alert("Appointment Approved!");
-
         location.reload();
 
     }).catch((error) => {
 
         console.log(error);
-
         alert("Approval Failed!");
 
     });
@@ -86,20 +96,30 @@ function approveAppointment(id) {
 }
 function rejectAppointment(id) {
 
-    db.collection("appointments").doc(id).update({
+    db.collection("appointments").doc(id).get().then((doc) => {
 
-        status: "Rejected"
+        const data = doc.data();
+
+        emailjs.send("service_d1z53t1", "template_qdgeuzz", {
+            name: data.name,
+            email: data.email,
+            date: data.date,
+            department: data.department,
+            status: "Rejected"
+        });
+
+        return db.collection("appointments").doc(id).update({
+            status: "Rejected"
+        });
 
     }).then(() => {
 
         alert("Appointment Rejected!");
-
         location.reload();
 
     }).catch((error) => {
 
         console.log(error);
-
         alert("Reject Failed!");
 
     });
